@@ -54,7 +54,7 @@ async def chatbot(_, message):
     lang = tr.translate(message.text).src
     trtoen = (message.text if lang=="en" else tr.translate(message.text, dest="en").text).replace(" ", "%20")
     text = trtoen.replace(" ", "%20") if len(message.text) < 2 else trtoen
-    affiliateplus = requests.get(f"https://api.affiliateplus.xyz/api/chatbot?message={text}&botname=AI%20Chat%20Bot&ownername=★彡[ʟᴢ ʜᴀᴄᴋᴇʀ]彡★&user=1")
+    affiliateplus = requests.get(f"https://api.affiliateplus.xyz/api/chatbot?message={text}&botname=AI%20Chat%20Bot&ownername=Lz%20Hacker&user=1")
     textmsg = (affiliateplus.json()["message"])
     msg = tr.translate(textmsg, src='en', dest=lang)
     await message.reply_text(msg.text)
